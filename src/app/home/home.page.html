@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Count Point Game
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="ion-padding">
+    Please sign in
+  </div>
+  <firebase-ui></firebase-ui>
+  <h1 *ngIf="afAuth.auth.currentUser">
+    Welcome {{afAuth.auth.currentUser.displayName}}!
+  </h1>
+
+  <ion-button *ngIf="afAuth.auth.currentUser" (click)="signOut()">Sign Out</ion-button>
+
+</ion-content>
