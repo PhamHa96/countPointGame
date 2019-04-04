@@ -1,3 +1,4 @@
+import { MainHomeComponent } from './main-home/main-home.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -12,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { UserService } from './services/user.service';
+import { Toast } from '@ionic-native/toast/ngx';
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
@@ -24,7 +26,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MainHomeComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -37,9 +39,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   providers: [
     UserService,
     StatusBar,
+    Toast,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

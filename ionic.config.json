@@ -1,5 +1,7 @@
 {
   "name": "countPointGame",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
