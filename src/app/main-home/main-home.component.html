@@ -11,25 +11,23 @@
 </ion-header>
 
 <ion-content padding *ngIf="afAuth.auth.currentUser">
-  <ion-item>
-    <ion-label class="ion-text-center">
-      Welcome <b>{{afAuth.auth.currentUser.displayName}} !</b>
-    </ion-label>
-  </ion-item>
+  <h5>
+    Welcome <strong>{{userName}} !</strong>
+  </h5>
   <ion-label class="ion-text-center">CHOOSE YOUR GAME</ion-label>
   <ion-grid>
-    <ion-row >
-      <ion-col size="4">
-          <ion-img src="./../../assets/tienlen.png"></ion-img>
-          <ion-card-subtitle padding class="ion-text-center">TIEN LEN</ion-card-subtitle>
+    <ion-row>
+      <ion-col (click)="onChooseTypeGame('1')" size="4">
+        <ion-img src="./../../assets/tienlen.png"></ion-img>
+        <ion-card-subtitle padding class="ion-text-center">TIEN LEN</ion-card-subtitle>
       </ion-col>
-      <ion-col size="4">
-          <ion-img src="./../../assets/tienlen.png"></ion-img>
-          <ion-card-subtitle padding class="ion-text-center">XI DACH</ion-card-subtitle>
+      <ion-col (click)="onChooseTypeGame('2')" size="4">
+        <ion-img src="./../../assets/tienlen.png"></ion-img>
+        <ion-card-subtitle padding class="ion-text-center">XI DACH</ion-card-subtitle>
       </ion-col>
-      <ion-col size="4">
-          <ion-img src="./../../assets/tienlen.png"></ion-img>
-          <ion-card-subtitle padding class="ion-text-center">DIEM</ion-card-subtitle>
+      <ion-col (click)="onChooseTypeGame('3')" size="4">
+        <ion-img src="./../../assets/tienlen.png"></ion-img>
+        <ion-card-subtitle padding class="ion-text-center">DIEM</ion-card-subtitle>
       </ion-col>
     </ion-row>
   </ion-grid>

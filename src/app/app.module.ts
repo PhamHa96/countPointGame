@@ -14,6 +14,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { UserService } from './services/user.service';
 import { Toast } from '@ionic-native/toast/ngx';
+import { AuthService } from './services/auth.service';
+
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
@@ -37,6 +39,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
   providers: [
+    AuthService,
     UserService,
     StatusBar,
     Toast,

@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Choose
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label>
+      <ion-icon name="body"></ion-icon> Number player
+    </ion-label>
+    <ion-select (ionChange)="onChangeSelect($event)" okText="Ok" cancelText="Cancel"
+      [(ngModel)]="infoGame.numberPlayer">
+      <ion-select-option value="2">2</ion-select-option>
+      <ion-select-option value="3">3</ion-select-option>
+      <ion-select-option value="4">4</ion-select-option>
+      <ion-select-option value="5">5</ion-select-option>
+      <ion-select-option value="6">6</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <ion-img src="./../../assets/default_avatar.png"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <form #infoPlayer>
+          <ion-item>
+            <ion-label>Name:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[0].name" name="name1"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Money have:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[0].money" name="money1"></ion-input>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <ion-img src="./../../assets/default_avatar.png"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <form #infoPlayer>
+          <ion-item>
+            <ion-label>Name:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[1].name" name="name2"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Money have:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[1].money" name="money2"></ion-input>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="infoGame.numberPlayer > 2">
+      <ion-col size="4">
+        <ion-img src="./../../assets/default_avatar.png"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <form #infoPlayer>
+          <ion-item>
+            <ion-label>Name:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[2].name" name="name3"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Money have:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[2].money" name="money3"></ion-input>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="infoGame.numberPlayer > 3">
+      <ion-col size="4">
+        <ion-img src="./../../assets/default_avatar.png"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <form #infoPlayer>
+          <ion-item>
+            <ion-label>Name:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[3].name" name="name4"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Money have:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[3].money" name="money4"></ion-input>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="infoGame.numberPlayer > 4">
+      <ion-col size="4">
+        <ion-img src="./../../assets/default_avatar.png"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <form #infoPlayer>
+          <ion-item>
+            <ion-label>Name:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[4].name" name="name5"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Money have:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[4].money" name="money5"></ion-input>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="infoGame.numberPlayer > 5">
+      <ion-col size="4">
+        <ion-img src="./../../assets/default_avatar.png"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <form #infoPlayer>
+          <ion-item>
+            <ion-label>Name:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[5].name" name="name6"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Money have:</ion-label>
+            <ion-input [(ngModel)]="infoGame.listGamer[5].money" name="money6"></ion-input>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button expand="block" fill="outline" (click)="doNext()">Next</ion-button>
+
+</ion-content>

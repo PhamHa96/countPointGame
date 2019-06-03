@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Choose Leader
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <!-- <ion-card>
+    <ion-item href="#" *ngFor="let item of listUser">
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-label>{{item.name}} - ${{item.money}}</ion-label>
+    </ion-item>
+  </ion-card> -->
+
+  <!-- Checkboxes in a List -->
+  <ion-list>
+    <ion-item *ngFor="let entry of listUser">
+      <ion-label>{{entry.name}} - $ {{entry.money}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" (ionChange)="checkEvent($event, entry.id)">
+      </ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" fill="outline" (click)="doNext()">Play</ion-button>
+
+</ion-content>

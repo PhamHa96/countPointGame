@@ -12,7 +12,7 @@ import { Toast } from '@ionic-native/toast/ngx';
 export class HomePage {
 	public username: string = 'test@gmail.com';
 	public password: string = '123456';
-	constructor(public afAuth: AngularFireAuth, public user: UserService, public router: Router, private toast: Toast) {
+	constructor(public afAuth: AngularFireAuth, public usersv: UserService, public router: Router, private toast: Toast) {
 	}
 	ngOnInit() {
 	}
@@ -24,8 +24,8 @@ export class HomePage {
 			const res = await this.afAuth.auth.signInWithEmailAndPassword(username, password)
 
 			if (res.user) {
-				this.user.setUser({
-					username,
+				this.usersv.setUser({
+					username: res.user.displayName,
 					uid: res.user.uid
 				})
 				this.toast.show(`Login successfully`, '10000', 'center').subscribe(
