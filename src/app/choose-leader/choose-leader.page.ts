@@ -8,12 +8,16 @@ import { GameService } from '../services/game.service';
 })
 export class ChooseLeaderPage implements OnInit {
   public listUser: any = []
-  constructor(public gamesv: GameService) { }
+  constructor(public gamesv: GameService) {
+
+  }
 
   ngOnInit() {
     console.log('in choose leader ', this.gamesv.infoGameComing)
+    let num = this.gamesv.infoGameComing ? this.gamesv.infoGameComing.numberPlayer : '';
+    console.log('number play', num)
     if (this.gamesv.infoGameComing) {
-      let tempListUser = this.gamesv.infoGameComing ? this.gamesv.infoGameComing.listGamer.splice(this.gamesv.infoGameComing.numberPlayer) : [];
+      let tempListUser = this.gamesv.infoGameComing ? this.gamesv.infoGameComing.listGamer.splice(0, num) : [];
       this.listUser = tempListUser;
     }
   }
@@ -29,8 +33,9 @@ export class ChooseLeaderPage implements OnInit {
       }
     }
     console.log('list user', this.listUser)
+    this.gamesv.infoGameComing = this.listUser;
   }
-  doNext() {
+  doPlay() {
 
   }
 }
