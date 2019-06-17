@@ -31,7 +31,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   declarations: [AppComponent, MainHomeComponent],
   entryComponents: [],
   imports: [
-    BrowserModule,
+  BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),

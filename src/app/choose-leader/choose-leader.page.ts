@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../services/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choose-leader',
@@ -8,7 +9,7 @@ import { GameService } from '../services/game.service';
 })
 export class ChooseLeaderPage implements OnInit {
   public listUser: any = []
-  constructor(public gamesv: GameService) {
+  constructor(public gamesv: GameService, public router: Router) {
 
   }
 
@@ -33,9 +34,11 @@ export class ChooseLeaderPage implements OnInit {
       }
     }
     console.log('list user', this.listUser)
-    this.gamesv.infoGameComing = this.listUser;
-  }
-  doPlay() {
+    this.gamesv.infoGameComing.listGamer = this.listUser;
 
   }
+  doPlay() {
+    this.router.navigate(['/board-playing']);
+  }
+
 }

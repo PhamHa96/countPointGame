@@ -1,9 +1,50 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>board-playing</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title>Board Playing</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <div text-center>
+    <ion-chip color="primary">
+      <ion-avatar>
+        <img src="../../assets/default_avatar.png">
+      </ion-avatar>
+      <ion-label>Leader: {{this.leader.name}}</ion-label>
+    </ion-chip>
+  </div>
+  <ion-grid>
+    <ion-row text-center>
+      <ion-col>
+        <b>STT</b>
+      </ion-col>
+      <ion-col *ngFor="let user of listUser">
+        <b>{{user.name}}</b>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center *ngFor="let in of counter(stt) ;let i = index">
+      <ion-col class="stt-col">
+        <ion-label>{{i+1}}</ion-label>
+      </ion-col>
+      <ion-col *ngFor="let user of listUser">
+        <ion-input> </ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-icon name="add-circle-outline" (click)="addNewGame()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div text-center>
+<ion-button color="success">
+  <ion-icon slot="start" name="star-outline"></ion-icon>
+  Show result
+</ion-button>
+<ion-button color="dark" (click)="stopRound()">
+  <ion-icon slot="end" name="remove-circle-outline"></ion-icon>
+  Stop round
+</ion-button>
+  </div>
+  
 </ion-content>
